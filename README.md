@@ -27,16 +27,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Deployment and Configuration Steps</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/aEuRwQ0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
+
  Setup Resources in Azure.
+ 
+ - You will need to create two different Virtual Machines. "Windows Server 2022" This is where your active directory will be configured, and "Windows 10" In this Virtual Machine is where the end user or "Client-1" will be using. 
   
--Create the Domain Controller Virtual Machine (Windows Server 2022) named “DC-1”
--Take note of the Resource Group and Virtual Network (Vnet) that get created at this time.
--Create the Client Virtual Machine (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in Step 1.
--Ensure that both Virtual Machines (DC-1 & Client-1) are in the same Virtual Network (you can check the topology with Network Watcher)
--Set Domain Controller’s (DC-1) NIC Private IP address to be STATIC.
+- Create the Domain Controller Virtual Machine (Windows Server 2022) and name it “DC-1”
+- Take note of the Resource Group and Virtual Network (Vnet) that get created at this time.
+- Create the Client Virtual Machine (Windows 10) named “Client-1”. Use the same Resource Group and Vnet that was created in Step 1.
+- VERY IMPORTANT - Ensure that both Virtual Machines (DC-1 & Client-1) are in the same Virtual Network (you can check the topology with Network Watcher)
+- Set Domain Controller’s (DC-1) NIC Private IP address to be STATIC. (to ensure that the IP address DOESN'T change using DHCP Protocol)
   
 </p>
 <br />
